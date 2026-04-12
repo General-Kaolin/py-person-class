@@ -7,13 +7,13 @@ class Person:
         Person.people[self.name] = self
 
 
-def create_person_list(args: list) -> list:
+def create_person_list(persons: list) -> list:
     result_list = []
 
-    for per in args:
+    for per in persons:
         Person(per["name"], per["age"])
 
-    for per in args:
+    for per in persons:
         person = Person.people[per["name"]]
         if per.get("wife"):
             person.wife = Person.people[per["wife"]]
